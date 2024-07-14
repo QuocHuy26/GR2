@@ -1,0 +1,48 @@
+.header {
+    height: 64px;
+    padding: 0 30px;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.88);
+    line-height: 64px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    color: #009eff;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.avatar {
+    margin-right: 30px;
+    color: #009eff;
+    cursor: pointer;
+}
+
+.menu-item-icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.menu-item span {
+    font-size: 16px;
+}
+
+.footer {
+    height: 35px;
+    text-align: center;
+    align-content: center;
+    background-color: #f5f5f5;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

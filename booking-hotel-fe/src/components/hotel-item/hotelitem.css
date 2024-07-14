@@ -1,0 +1,50 @@
+.hotel-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-color: rgb(221, 223, 226);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: none;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.hotel-img img {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+}
+
+.hotel-content {
+    padding: 1rem 1rem;
+}
+
+.hotel-name {
+    line-height: 1.1em;
+}
+
+.hotel-address {
+    line-height: 0.8em;
+    color: #504e4e;
+}
+
+.hotel-content h1 {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.004em;
+    height: 2.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.hotel-price {
+    color: #e1341e;
+    font-weight: 700;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,37 @@
+.body {
+    display: flex;
+    flex-direction: row;
+}
+
+.hotel {
+    padding: 0 2rem 100px;
+    width: 100%;
+}
+
+.container-hotel {
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-results {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title {
+    padding: 1rem 0rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.title h1 {
+    margin: 0;
+    color: #4e5679;
+}
+
+.hotel-list {
+    width: 100%;
+    align-items: center;
+    gap: 1rem 1rem;
+}

@@ -1,0 +1,41 @@
+.name {
+    display: flex;
+    font-size: 34px;
+    line-height: 1.4;
+    margin: 1rem 0 0.8rem;
+}
+
+.hotel-info {
+    margin-top: 100px;
+}
+
+.address {
+    font-size: 18px;
+    line-height: 1.4;
+    opacity: 0.8;
+    text-align: left;
+}
+
+.address div {
+    margin: 10px 0;
+}
+
+.hotel-image {
+    display: flex;
+    margin-top: 20px;
+    width: 90%;
+}
+
+.image {
+    height: 500px !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.button {
+    text-align: right;
+}
+
+.button button {
+    margin: 0 20px;
+}

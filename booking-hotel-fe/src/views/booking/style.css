@@ -1,0 +1,12 @@
+.hotel-name {
+    margin: 0 0 0 0;
+}
+
+.hotel-name h2 {
+    margin: 0;
+}
+
+.status {
+    font-size: 12px;
+    border-radius: 4px;
+}

@@ -41,3 +41,13 @@ export async function updateBooking(id, data, callback) {
             callback(err);
         })
 }
+
+export async function deleteBooking(id, callback) {
+    await axios.delete(`${api}/booking/${id}`)
+        .then((res) => {
+            callback(res.data);
+        })
+        .catch((err) => {
+            callback(err);
+        })
+}

@@ -1,15 +1,49 @@
-import { Card, Col, notification, Row } from "antd";
+import { Button, Card, Col, Modal, notification, Row } from "antd";
 import React, { useEffect, useState } from "react";
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { getHotelDetails } from "../../services/hotel";
 import { getUserDetails } from "../../services/user";
 import { formatToDate, formatToDateTime } from "../../services/formatDate";
 import "./style.css";
 import { getRoomDetails } from "../../services/room";
+import { deleteBooking } from "../../services/booking";
 
 const BookingItem = ({ data }) => {
     const [hotel, setHotel] = useState();
     const [cus, setCus] = useState();
     const [room, setRoom] = useState();
+
+    const handleDeleteBooking = (id) => {
+        Modal.confirm({
+            title: `Hủy đặt phòng`,
+            icon: <ExclamationCircleOutlined />,
+            content: 'Bạn có chắc chắn muốn hủy?',
+            onOk() {
+                deleteBooking(id, (res) => {
+                    if (res.status === 200) {
+                        notification.success({
+                            message: `Thông báo`,
+                            description: res.message,
+                            placement: `bottomRight`,
+                            duration: 1.5,
+                        });
+                        window.location.reload();
+                    } else {
+                        notification.error({
+                            message: 'Thông báo',
+                            description: 'Có lỗi xảy ra',
+                            placement: `bottomRight`,
+                            duration: 1.5,
+                        });
+                    }
+                });
+            },
+            onCancel() {
+
+            },
+            centered: true,
+        });
+    }
 
     useEffect(() => {
         getUserDetails(data.user_id, (res) => {
@@ -60,7 +94,7 @@ const BookingItem = ({ data }) => {
                                 <div style={{ color: '#05f' }}><h2>{hotel.name}</h2></div>
                             </Col>
                             <Col span={12} style={{ textAlign: 'right' }}>
-                                <div style={{ fontSize: '12px', opacity: '0.7' }}>{formatToDateTime(data.bookDate)}</div>
+                                <div style={{ fontSize: '12px', opacity: '0.7' }}>Thời gian: {formatToDateTime(data.bookDate)}</div>
                             </Col>
                         </Row>
                         <Row>
@@ -81,6 +115,16 @@ const BookingItem = ({ data }) => {
                                     {(data.status === 1) && <span style={{ color: '#5f0' }}>Đã xác nhận</span>}
                                     {(data.status === 2) && <span style={{ color: '#f50' }}>Bị từ chối</span>}
                                 </div>
+                                {(data.status === 0) && (
+                                    <Button
+                                        type="primary"
+                                        danger
+                                        onClick={() => handleDeleteBooking(data.book_id)}
+                                        style={{ padding: '5px' }}
+                                    >
+                                        Hủy đơn
+                                    </Button>
+                                )}
                             </Col>
                         </Row>
                     </Card>

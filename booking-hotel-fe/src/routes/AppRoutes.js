@@ -29,7 +29,7 @@ const AppRoutes = () => {
         if (currentPath === '/') {
             if (user.role === '') navigate('/login');
             if (user.role === 0) navigate('/user');
-            if (user.role === 1) navigate('/hotel');
+            if (user.role === 1) navigate('/booking-hotel');
             if (user.role === 2) navigate('/search');
         }
         console.log(currentPath);

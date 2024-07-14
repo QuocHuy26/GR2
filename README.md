@@ -2,7 +2,7 @@ Tải và chạy MySQL.
 Tạo database tên là booking_hotel.
 
 Mở terminal, chạy:
-git clone https://github.com/QuocHuy26/GR2.git
+git clone https://github.com/QuocHuy26/GR2.git \n
 cd booking-hotel-BE
 npm install
 npx sequelize-cli db:migrate
